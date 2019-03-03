@@ -16,6 +16,8 @@ android {
 }
 
 dependencies {
+    def room_version = "2.1.0-alpha04"
+
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation project(':base')
@@ -25,4 +27,11 @@ dependencies {
     implementation 'net.sourceforge.htmlunit:htmlunit:2.33'
     compileOnly 'org.projectlombok:lombok:1.18.4'
     annotationProcessor 'org.projectlombok:lombok:1.18.4'
+
+    implementation "androidx.room:room-runtime:$room_version"
+    annotationProcessor "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-rxjava2:$room_version"
+    implementation "androidx.room:room-guava:$room_version"
+    implementation "androidx.room:room-coroutines:$room_version"
+    testImplementation "androidx.room:room-testing:$room_version"
 }

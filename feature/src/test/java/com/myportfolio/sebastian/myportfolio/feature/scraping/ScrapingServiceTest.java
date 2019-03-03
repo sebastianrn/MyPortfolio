@@ -1,11 +1,11 @@
 package com.myportfolio.sebastian.myportfolio.feature.scraping;
 
-import com.myportfolio.sebastian.myportfolio.feature.model.PriceListItem;
+import com.myportfolio.sebastian.myportfolio.feature.scrapingEntities.PriceListItem;
 import org.junit.Test;
 
 import java.util.List;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
 
 public class ScrapingServiceTest {
 

@@ -4,9 +4,9 @@ import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.html.HtmlAnchor;
 import com.gargoylesoftware.htmlunit.html.HtmlElement;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
-import com.myportfolio.sebastian.myportfolio.feature.model.Currency;
-import com.myportfolio.sebastian.myportfolio.feature.model.Price;
-import com.myportfolio.sebastian.myportfolio.feature.model.PriceListItem;
+import com.myportfolio.sebastian.myportfolio.feature.scrapingEntities.Currency;
+import com.myportfolio.sebastian.myportfolio.feature.scrapingEntities.Price;
+import com.myportfolio.sebastian.myportfolio.feature.scrapingEntities.PriceListItem;
 import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.jetty.util.StringUtil;
 
@@ -15,7 +15,7 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
-class ScrapingService {
+public class ScrapingService {
     private List<PriceListItem> priceListItems = new ArrayList<>();
     private static final String searchUrl = "https://philoro.ch/preisliste";
 

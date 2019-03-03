@@ -1,4 +1,4 @@
-package com.myportfolio.sebastian.myportfolio.feature.model;
+package com.myportfolio.sebastian.myportfolio.feature.scrapingEntities;
 
 import lombok.Data;
 
