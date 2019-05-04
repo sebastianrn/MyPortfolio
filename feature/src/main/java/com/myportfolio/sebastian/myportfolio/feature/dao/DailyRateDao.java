@@ -1,6 +1,5 @@
 package com.myportfolio.sebastian.myportfolio.feature.dao;
 
-import android.arch.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -13,8 +12,8 @@ import java.util.List;
 public interface DailyRateDao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    void insertDailyRateForPortfolio(Integer portfolioId, DailyRate dailyRate);
+    void insertDailyRateForPortfolio(DailyRate dailyRate);
 
     @Query("SELECT * FROM daily_rates WHERE  portfolio_id= :portfolioId")
-    LiveData<List<DailyRate>> getAllDailyRatesForPortfolio(Integer portfolioId);
+    List<DailyRate> getAllDailyRatesForPortfolio(Integer portfolioId);
 }

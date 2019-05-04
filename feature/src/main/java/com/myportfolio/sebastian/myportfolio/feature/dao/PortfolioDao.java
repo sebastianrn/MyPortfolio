@@ -1,6 +1,5 @@
 package com.myportfolio.sebastian.myportfolio.feature.dao;
 
-import android.arch.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
@@ -16,5 +15,5 @@ public interface PortfolioDao {
     void insertPortfolio(Portfolio portfolio);
 
     @Query("SELECT * from portfolios")
-    LiveData<List<Portfolio>> getAllPortfolios();
+    List<Portfolio> getAllPortfolios();
 }

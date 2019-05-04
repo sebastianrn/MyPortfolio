@@ -1,8 +1,7 @@
 package com.myportfolio.sebastian.myportfolio.feature.viewModel;
 
 import android.app.Application;
-import android.arch.lifecycle.AndroidViewModel;
-import android.arch.lifecycle.LiveData;
+import androidx.lifecycle.AndroidViewModel;
 import com.myportfolio.sebastian.myportfolio.feature.dao.AsyncDailyRate;
 import com.myportfolio.sebastian.myportfolio.feature.databaseEntities.DailyRate;
 import com.myportfolio.sebastian.myportfolio.feature.repository.DailyRateRepository;
@@ -12,7 +11,7 @@ import java.util.List;
 public class DailyRateViewModel extends AndroidViewModel {
     private DailyRateRepository dailyRateRepository;
 
-    private LiveData<List<DailyRate>> dailyRatesForPortfolio;
+    private List<DailyRate> dailyRatesForPortfolio;
 
     public DailyRateViewModel(Application application) {
         super(application);
@@ -20,7 +19,7 @@ public class DailyRateViewModel extends AndroidViewModel {
         dailyRatesForPortfolio = dailyRateRepository.getDailyRatesForPortfolio();
     }
 
-    LiveData<List<DailyRate>> getDailyRatesForPortfolio() {
+    List<DailyRate> getDailyRatesForPortfolio() {
         return dailyRatesForPortfolio;
     }
 

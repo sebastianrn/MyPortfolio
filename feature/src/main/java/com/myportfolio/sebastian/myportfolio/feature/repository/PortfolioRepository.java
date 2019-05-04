@@ -1,7 +1,6 @@
 package com.myportfolio.sebastian.myportfolio.feature.repository;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 import com.myportfolio.sebastian.myportfolio.feature.PortfolioDatabase;
 import com.myportfolio.sebastian.myportfolio.feature.dao.PortfolioDao;
@@ -11,7 +10,7 @@ import java.util.List;
 
 public class PortfolioRepository {
     private PortfolioDao portfolioDao;
-    private LiveData<List<Portfolio>> portfolios;
+    private List<Portfolio> portfolios;
 
     public PortfolioRepository(Application application) {
         PortfolioDatabase portfolioDatabase = PortfolioDatabase.getDatabase(application);
@@ -19,7 +18,7 @@ public class PortfolioRepository {
         portfolios = portfolioDao.getAllPortfolios();
     }
 
-    public LiveData<List<Portfolio>> getAllPortfolios() {
+    public List<Portfolio> getAllPortfolios() {
         return portfolios;
     }
 

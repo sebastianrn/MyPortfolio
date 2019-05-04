@@ -1,7 +1,6 @@
 package com.myportfolio.sebastian.myportfolio.feature.repository;
 
 import android.app.Application;
-import android.arch.lifecycle.LiveData;
 import android.os.AsyncTask;
 import com.myportfolio.sebastian.myportfolio.feature.PortfolioDatabase;
 import com.myportfolio.sebastian.myportfolio.feature.dao.AsyncDailyRate;
@@ -12,7 +11,7 @@ import java.util.List;
 
 public class DailyRateRepository {
     private DailyRateDao dailyRateDao;
-    private LiveData<List<DailyRate>> dailyRatesForPortfolio;
+    private List<DailyRate> dailyRatesForPortfolio;
 
     public DailyRateRepository(Application application) {
         PortfolioDatabase portfolioDatabase = PortfolioDatabase.getDatabase(application);
@@ -20,7 +19,7 @@ public class DailyRateRepository {
         dailyRatesForPortfolio = dailyRateDao.getAllDailyRatesForPortfolio(null);
     }
 
-    public LiveData<List<DailyRate>> getDailyRatesForPortfolio() {
+    public List<DailyRate> getDailyRatesForPortfolio() {
         return dailyRatesForPortfolio;
     }
 
@@ -37,7 +36,7 @@ public class DailyRateRepository {
 
         @Override
         protected Void doInBackground(AsyncDailyRate... asyncDailyRates) {
-            asyncDao.insertDailyRateForPortfolio(asyncDailyRates[0].getPortfolioId(), asyncDailyRates[0].getDailyRate());
+            asyncDao.insertDailyRateForPortfolio(asyncDailyRates[0].getDailyRate());
             return null;
         }
     }
