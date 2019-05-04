@@ -14,9 +14,6 @@ android {
         //testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
-    testOptions {
-        execution 'ANDROIDX_TEST_ORCHESTRATOR'
-    }
     packagingOptions {
         exclude 'META-INF/DEPENDENCIES'
         exclude 'META-INF/LICENSE'
