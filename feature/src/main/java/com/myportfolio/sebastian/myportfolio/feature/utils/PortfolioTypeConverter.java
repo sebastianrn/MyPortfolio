@@ -15,4 +15,5 @@ public class PortfolioTypeConverter {
     public static Long toLong(Instant value) {
         return value == null ? null : value.getEpochSecond();
     }
+
 }

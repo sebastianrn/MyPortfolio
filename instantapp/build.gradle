@@ -4,3 +4,12 @@ dependencies {
     implementation project(':feature')
     implementation project(':base')
 }
+
+android {
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
+    compileSdkVersion = 28
+    buildToolsVersion = '28.0.3'
+}
