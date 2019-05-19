@@ -12,7 +12,6 @@ import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
-import java.io.IOException;
 import java.time.Instant;
 
 import static org.junit.Assert.assertEquals;
@@ -33,14 +32,12 @@ public class DailyRateDaoTest {
     }
 
     @After
-    public void closeDb() throws IOException {
+    public void closeDb() {
         portfolioDatabase.close();
     }
 
     @Test
     public void test_insertDailyRateForPortfolio() {
-        //DailyRate dailyRate = random(DailyRate.class);
-
         DailyRate dailyRate = createDailyRate(12, Instant.now(), 123, "article1", "1 Unze", 222L, 200L);
 
         portfolioDao.insertPortfolio(getPortfolio());
