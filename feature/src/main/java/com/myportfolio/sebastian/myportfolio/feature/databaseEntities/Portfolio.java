@@ -4,6 +4,7 @@ import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -20,10 +21,7 @@ public class Portfolio {
     private int id;
     @ColumnInfo(name = "portfolio_name")
     private String portfolioName;
-    //private Transaction transaction;
-    //@ColumnInfo(name = "daily_rates")
-    //private List<DailyRate> dailyRates;
-    //private CurrentValue currentValue;
+    //private Long currentValue;
 
 
 }

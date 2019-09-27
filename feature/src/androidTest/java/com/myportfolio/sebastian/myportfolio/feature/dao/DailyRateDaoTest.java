@@ -1,12 +1,15 @@
 package com.myportfolio.sebastian.myportfolio.feature.dao;
 
 import android.content.Context;
+
 import androidx.room.Room;
 import androidx.test.core.app.ApplicationProvider;
 import androidx.test.runner.AndroidJUnit4;
+
 import com.myportfolio.sebastian.myportfolio.feature.PortfolioDatabase;
 import com.myportfolio.sebastian.myportfolio.feature.databaseEntities.DailyRate;
 import com.myportfolio.sebastian.myportfolio.feature.databaseEntities.Portfolio;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -42,7 +45,7 @@ public class DailyRateDaoTest {
 
         portfolioDao.insertPortfolio(getPortfolio());
         dailyRateDao.insertDailyRateForPortfolio(dailyRate);
-        assertEquals(1, dailyRateDao.getAllDailyRatesForPortfolio(PORTFOLIO_ID).size());
+        assertEquals(1, dailyRateDao.getAllDailyRatesForPortfolio(PORTFOLIO_ID).getValue().size());
     }
 
     private Portfolio getPortfolio() {

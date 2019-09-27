@@ -1,9 +1,11 @@
 package com.myportfolio.sebastian.myportfolio.feature.dao;
 
+import androidx.lifecycle.LiveData;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
+
 import com.myportfolio.sebastian.myportfolio.feature.databaseEntities.DailyRate;
 
 import java.util.List;
@@ -15,5 +17,8 @@ public interface DailyRateDao {
     void insertDailyRateForPortfolio(DailyRate dailyRate);
 
     @Query("SELECT * FROM daily_rates WHERE  portfolio_id= :portfolioId")
-    List<DailyRate> getAllDailyRatesForPortfolio(Integer portfolioId);
+    LiveData<List<DailyRate>> getAllDailyRatesForPortfolio(Integer portfolioId);
+
+    @Query("SELECT * FROM daily_rates WHERE  portfolio_id= :portfolioId")
+    List<DailyRate> getAllDailyRatesForPortfolioX(Integer portfolioId);
 }
